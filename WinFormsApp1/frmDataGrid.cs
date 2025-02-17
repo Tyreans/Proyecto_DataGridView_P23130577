@@ -29,24 +29,30 @@ namespace MiPrimerApp2025C
                     int a = arr.Length;
                     dgvDatos.ColumnCount = a;
                     dgvDatos.RowCount = excel.Length;
-                    for (int i = 0; i < a; i++) {
+                    for (int i = 0; i < a; i++)
+                    {
                         dgvDatos.Rows[0].Cells[i].Value = arr[i];
                     }
 
-                    for (int i = 1; i < (excel.Length)-1; i++) {
+                    for (int i = 1; i < (excel.Length) - 1; i++)
+                    {
                         arr = excel[i].Split(',');
                         for (int j = 0; j < a; j++)
                         {
                             dgvDatos.Rows[i].Cells[j].Value = arr[j];
                         }
                     }
-                
-                    
+
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al abrir el archivo: " + ex.Message);
                 }
+            }
+            else
+            {
+                this.Close();
             }
         }
 
@@ -76,15 +82,42 @@ namespace MiPrimerApp2025C
             }
 
         }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            DialogResult resultado;
+            resultado = openFileDialog1.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                filePath = openFileDialog1.FileName;
+                try
+                {
+                    string texto = File.ReadAllText(filePath);
+                    string[] excel = texto.Split('\n');
+                    string[] arr = excel[0].Split(',');
+                    int a = arr.Length;
+                    dgvDatos.ColumnCount = a;
+                    dgvDatos.RowCount = excel.Length;
+                    for (int i = 0; i < a; i++)
+                    {
+                        dgvDatos.Rows[0].Cells[i].Value = arr[i];
+                    }
 
-        }
+                    for (int i = 1; i < (excel.Length) - 1; i++)
+                    {
+                        arr = excel[i].Split(',');
+                        for (int j = 0; j < a; j++)
+                        {
+                            dgvDatos.Rows[i].Cells[j].Value = arr[j];
+                        }
+                    }
 
-        private void frmDataGrid_Load(object sender, EventArgs e)
-        {
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al abrir el archivo: " + ex.Message);
+                }
+            }
         }
     }
 }

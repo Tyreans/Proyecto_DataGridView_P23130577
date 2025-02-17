@@ -28,50 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvDatos = new DataGridView();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            btnGuardar = new Button();
             saveFileDialogDataGrid = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
+            button1 = new Button();
+            btnGuardar = new Button();
+            dgvDatos = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // dgvDatos
-            // 
-            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDatos.Dock = DockStyle.Fill;
-            dgvDatos.Location = new Point(3, 3);
-            dgvDatos.Name = "dgvDatos";
-            dgvDatos.RowHeadersWidth = 62;
-            dgvDatos.Size = new Size(1168, 422);
-            dgvDatos.TabIndex = 0;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(dgvDatos, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnGuardar, 0, 1);
-            tableLayoutPanel1.Location = new Point(2, 12);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 86.1167F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.8833F));
-            tableLayoutPanel1.Size = new Size(1174, 497);
-            tableLayoutPanel1.TabIndex = 1;
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            btnGuardar.ImageAlign = ContentAlignment.TopCenter;
-            btnGuardar.Location = new Point(3, 445);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(1168, 34);
-            btnGuardar.TabIndex = 1;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
             // 
             // saveFileDialogDataGrid
             // 
@@ -81,28 +46,77 @@
             // 
             openFileDialog1.FileName = "openFileDialogDataGrid";
             openFileDialog1.Filter = "Text files (*.txt)|*.txt|Excel (*.csv*)|*.csv*";
-            openFileDialog1.FileOk += openFileDialog1_FileOk;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            button1.Location = new Point(3, 500);
+            button1.Name = "button1";
+            button1.Size = new Size(1168, 40);
+            button1.TabIndex = 2;
+            button1.Text = "Abrir";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnGuardar.ImageAlign = ContentAlignment.TopCenter;
+            btnGuardar.Location = new Point(3, 454);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(1168, 34);
+            btnGuardar.TabIndex = 1;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Dock = DockStyle.Fill;
+            dgvDatos.Location = new Point(3, 3);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.RowHeadersWidth = 62;
+            dgvDatos.Size = new Size(1168, 439);
+            dgvDatos.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(dgvDatos, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnGuardar, 0, 1);
+            tableLayoutPanel1.Controls.Add(button1, 0, 2);
+            tableLayoutPanel1.Location = new Point(2, 12);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 89.5372238F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.4627762F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 46F));
+            tableLayoutPanel1.Size = new Size(1174, 543);
+            tableLayoutPanel1.TabIndex = 1;
+           
             // 
             // frmDataGrid
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1178, 521);
+            ClientSize = new Size(1178, 567);
             Controls.Add(tableLayoutPanel1);
             Name = "frmDataGrid";
             Text = "DataGridView";
-            Load += frmDataGrid_Load;
+            
             ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dgvDatos;
-        private TableLayoutPanel tableLayoutPanel1;
         private SaveFileDialog saveFileDialogDataGrid;
         private OpenFileDialog openFileDialog1;
+        private Button button1;
         private Button btnGuardar;
+        private DataGridView dgvDatos;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }
